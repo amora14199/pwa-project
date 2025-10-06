@@ -284,3 +284,28 @@ h1, h2 {
 .install-btn:hover {
     background-color: #ff85a2; 
 }
+/* ---- Styling untuk Tombol Install PWA ---- */
+#install-pwa-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+}
+
+.install-btn {
+    background-color: var(--pastel-pink); 
+    color: white; 
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 102, 178, 0.4);
+    transition: background-color 0.3s ease;
+}
+
+.install-btn:hover {
+    background-color: #ff85a2; 
+}
