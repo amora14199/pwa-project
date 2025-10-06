@@ -232,3 +232,30 @@ h1, h2 {
         gap: 1rem;
     }
 }
+/* ---- Styling untuk Tombol Install PWA yang Fix ---- */
+#install-pwa-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+}
+
+.install-btn {
+    /* Menggunakan warna yang sudah ada di :root */
+    background-color: var(--pastel-pink); 
+    color: var(--light-text); 
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 102, 178, 0.4);
+    transition: background-color 0.3s ease;
+}
+
+.install-btn:hover {
+    /* Sedikit warna yang lebih gelap saat di-hover */
+    background-color: #ff85a2; 
+}
