@@ -8,8 +8,10 @@ const urlsToCache = [
   './about.html',
   './contact.html',
   './offline.html',
+  './style.css', 
+  './script.js', 
   './manifest.json',
-  './images/icon-192.png',
+  './images/icon-192.png', 
   './images/icon-512.png'
 ];
 
