@@ -11,17 +11,28 @@
 </head>
 <script>
   let deferredPrompt;
+  // Ini adalah kode untuk memunculkan tombol install
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
+    
+    // Buat container dan tombol
+    const installContainer = document.createElement('div');
+    installContainer.id = 'install-pwa-container';
+    
     const btn = document.createElement('button');
     btn.textContent = '📲 Install Aplikasi';
-    document.body.appendChild(btn);
+    btn.classList.add('install-btn'); // Menggunakan class untuk styling di style.css
+    
+    installContainer.appendChild(btn);
+    // Tambahkan tombol di akhir body agar tidak mengganggu layout utama
+    document.body.appendChild(installContainer); 
+    
     btn.addEventListener('click', async () => {
-      btn.remove();
+      installContainer.remove(); // Hapus tombol setelah diklik
       deferredPrompt.prompt();
       const result = await deferredPrompt.userChoice;
-      console.log(result.outcome);
+      console.log('Install prompt result:', result.outcome);
       deferredPrompt = null;
     });
   });
@@ -58,7 +69,7 @@
 </body>
 <script>
   if ('serviceWorker' in navigator) {
-    // Ganti '/' menjadi './'
+    // Perhatikan './' di sini (Jalur relatif untuk GitHub Pages)
     navigator.serviceWorker.register('./service-worker.js')
       .then(reg => console.log('Service Worker berhasil didaftarkan!', reg))
       .catch(err => console.log('Service Worker gagal!', err));
