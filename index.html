@@ -22,10 +22,10 @@
     
     const btn = document.createElement('button');
     btn.textContent = '📲 Install Aplikasi';
-    btn.classList.add('install-btn'); // Menggunakan class untuk styling di style.css
+    btn.classList.add('install-btn'); // Menggunakan class untuk styling
     
     installContainer.appendChild(btn);
-    // Tambahkan tombol di akhir body agar tidak mengganggu layout utama
+    // Tambahkan tombol di akhir body agar muncul di bawah
     document.body.appendChild(installContainer); 
     
     btn.addEventListener('click', async () => {
@@ -69,7 +69,7 @@
 </body>
 <script>
   if ('serviceWorker' in navigator) {
-    // Perhatikan './' di sini (Jalur relatif untuk GitHub Pages)
+    // FIX: Menggunakan jalur relatif './' untuk GitHub Pages
     navigator.serviceWorker.register('./service-worker.js')
       .then(reg => console.log('Service Worker berhasil didaftarkan!', reg))
       .catch(err => console.log('Service Worker gagal!', err));
