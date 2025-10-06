@@ -8,8 +8,8 @@ const urlsToCache = [
   './about.html',
   './contact.html',
   './offline.html',
-  './style.css',     // <-- Tambahan: CSS
-  './script.js',     // <-- Tambahan: JavaScript
+  './style.css',     // <-- Tambahan
+  './script.js',     // <-- Tambahan
   './manifest.json',
   './images/icon-192.png',
   './images/icon-512.png'
@@ -19,7 +19,7 @@ const urlsToCache = [
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
-      console.log('Berhasil buka cache');
+      console.log('Berhasil buka cache dan menyimpan aset statis');
       return cache.addAll(urlsToCache);
     })
   );
