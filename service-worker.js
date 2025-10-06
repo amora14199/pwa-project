@@ -8,8 +8,8 @@ const urlsToCache = [
   './about.html',
   './contact.html',
   './offline.html',
-  './style.css',     // <-- Tambahan
-  './script.js',     // <-- Tambahan
+  './style.css',     // <-- Fix: Tambahkan
+  './script.js',     // <-- Fix: Tambahkan
   './manifest.json',
   './images/icon-192.png',
   './images/icon-512.png'
@@ -25,10 +25,9 @@ self.addEventListener('install', event => {
   );
 });
 
-// Saat service worker fetch data
+// Saat service worker fetch data (Strategi Network First dengan Fallback Offline)
 self.addEventListener('fetch', event => {
   event.respondWith(
-    // Strategi: Network First, Fallback ke Cache, Fallback Akhir ke Offline Page
     fetch(event.request).catch(() => caches.match(event.request)
       .then(response => response || caches.match('./offline.html')))
   );
