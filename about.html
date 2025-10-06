@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Saya | Website Estetika</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ff66b2">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">Web Saya</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="about-section">
+            <div class="about-content">
+                <img src="https://via.placeholder.com/250" alt="Foto Profil" class="profile-image">
+                <h2>Tentang Proyek Saya</h2>
+                <p>Website ini merupakan proyek Desain Web yang saya kerjakan sebagai tugas membuat simulasi website dasar. Tujuan dari proyek ini adalah mengaplikasikan struktur HTML dan styling CSS untuk membuat website yang rapi dan fungsional.</p>
+                <p>Melalui proyek ini, saya belajar bagaimana menghubungkan halaman-halaman web, membuat navigasi yang interaktif, dan menerapkan desain yang konsisten dengan tema estetika pastel yang saya sukai.</p>
+                
+                <div class="skills-section">
+                    <h3>Keahlian yang Dipelajari:</h3>
+                    <ul>
+                        <li>Struktur HTML yang rapi dan terorganisir</li>
+                        <li>Styling dengan CSS: warna, font, dan layout</li>
+                        <li>Membuat navigasi antar halaman</li>
+                        <li>Menggunakan elemen-elemen form</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Website Estetika. Dibuat untuk Tugas Desain Web.</p>
+    </footer>
+
+</body>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(reg => console.log('Service Worker berhasil didaftarkan!', reg))
+      .catch(err => console.log('Service Worker gagal!', err));
+  }
+</script>
+</html>

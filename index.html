@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Website Estetika</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ff66b2">
+</head>
+<script>
+  let deferredPrompt;
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    const btn = document.createElement('button');
+    btn.textContent = '📲 Install Aplikasi';
+    document.body.appendChild(btn);
+    btn.addEventListener('click', async () => {
+      btn.remove();
+      deferredPrompt.prompt();
+      const result = await deferredPrompt.userChoice;
+      console.log(result.outcome);
+      deferredPrompt = null;
+    });
+  });
+</script>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">Web Saya</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>Halo! This is Sasya blog</h1>
+                <p>Seorang pengembang web yang cantik. Selamat datang di portofolio aku yang sederhana.</p>
+            </div>
+            <div class="hero-image-container">
+                <img src="https://via.placeholder.com/400" alt="Gambar Selamat Datang" class="hero-image">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Website Estetika. Dibuat untuk Tugas Desain Web.</p>
+    </footer>
+
+</body>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(reg => console.log('Service Worker berhasil didaftarkan!', reg))
+      .catch(err => console.log('Service Worker gagal!', err));
+  }
+</script>
+</html>

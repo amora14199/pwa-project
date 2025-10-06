@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak | Website Estetika</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ff66b2">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">Web Saya</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="contact-section">
+            <h2>Hubungi Saya</h2>
+            <p>Silakan isi formulir di bawah ini untuk mengirimkan pesan.</p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="nama">Nama Anda</label>
+                    <input type="text" id="nama" name="nama" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Anda</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="kategori">Kategori Pesan</label>
+                    <select id="kategori" name="kategori">
+                        <option value="pertanyaan">Pertanyaan</option>
+                        <option value="saran">Saran</option>
+                        <option value="masalah">Masalah</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pesan">Pesan Anda</label>
+                    <textarea id="pesan" name="pesan" rows="6" required></textarea>
+                </div>
+                <div class="form-group radio-group">
+                    <p>Apakah Anda ingin menerima balasan?</p>
+                    <label><input type="radio" name="balasan" value="ya" required> Ya</label>
+                    <label><input type="radio" name="balasan" value="tidak" required> Tidak</label>
+                </div>
+                <button type="submit" class="btn">Kirim Pesan</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Website Estetika. Dibuat untuk Tugas Desain Web.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(reg => console.log('Service Worker berhasil didaftarkan!', reg))
+      .catch(err => console.log('Service Worker gagal!', err));
+  }
+</script>
+</html>
